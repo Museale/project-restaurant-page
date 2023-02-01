@@ -30,12 +30,23 @@ restaurantImageThree.src = ThirdImg;
 
 const restaurantInfo = document.createElement('div');
 restaurantInfo.id = 'restaurant-info';
+restaurantInfo.textContent = '居 酒 屋'
 
 const restaurantNav = document.createElement('nav');
 restaurantNav.id = 'restaurant-nav';
 
+const restaurantFooter = document.createElement('footer');
+restaurantFooter.id = 'restaurant-footer';
+
 const menu = document.createElement('div');
-menu.textContent = 'Menu';
+menu.textContent = 'メニュー';
+
+const ourStory = document.createElement('div');
+ourStory.textContent = '物語';
+
+const contact = document.createElement('div');
+contact.textContent = 'お問い合わせ';
+
 
 
 
@@ -45,6 +56,8 @@ menu.textContent = 'Menu';
 //Video by The Instagrapher: https://www.pexels.com/video/close-up-shot-of-a-chef-making-a-sushi-5845753/
 content.appendChild(restaurantNav);
     restaurantNav.appendChild(menu);
+    restaurantNav.appendChild(ourStory);
+    restaurantNav.appendChild(contact);
 
 content.appendChild(restaurantName);
 
@@ -53,6 +66,8 @@ content.appendChild(cover);
     cover.appendChild(restaurantImageTwo);
     cover.appendChild(restaurantImageThree);
     cover.appendChild(restaurantInfo);
+
+content.appendChild(restaurantFooter);
 
 };
 
