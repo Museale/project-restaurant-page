@@ -1,4 +1,6 @@
 import "./style.scss";
+import { CreateMenu } from "./menu";
+import { CreateAbout } from "./about";
 import FirstImg from './pexels-cottonbro-studio-3297362.jpg';
 import SecImg from './pexels-cottonbro-studio-3297366.jpg';
 import ThirdImg from './pexels-cottonbro-studio-3297361.jpg';
@@ -38,14 +40,33 @@ restaurantNav.id = 'restaurant-nav';
 const restaurantFooter = document.createElement('footer');
 restaurantFooter.id = 'restaurant-footer';
 
-const menu = document.createElement('div');
+const menu = document.createElement('a');
 menu.textContent = 'メニュー';
+menu.href = '#';
 
-const ourStory = document.createElement('div');
+menu.addEventListener('click', () =>  {
+    if (content.hasChildNodes()) {
+        content.removeChild;
+    }
+
+    CreateMenu();
+})
+
+const ourStory = document.createElement('a');
 ourStory.textContent = '物語';
+ourStory.href = '#';
 
-const contact = document.createElement('div');
+ourStory.addEventListener('click', () => {
+    if (content.hasChildNodes()) {
+        content.removeChild;
+    }
+    
+    CreateAbout();
+});
+
+const contact = document.createElement('a');
 contact.textContent = 'お問い合わせ';
+contact.href = '#';
 
 
 
