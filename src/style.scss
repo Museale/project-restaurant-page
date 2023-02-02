@@ -55,7 +55,7 @@ table {
 }
 body {
   border-radius: 50px;
-  background-image: url(./koi-732006.svg);
+  background-image: url(./images/koi-732006.svg);
   background-blend-mode: exclusion;
   // background-color: rgba(184, 184, 184, 0.432);
   background-repeat: none;
@@ -126,7 +126,7 @@ a {
 
 }
 
-#cover, #menu, #about {
+#cover, #menu-cover, #about-cover, #contact-cover, #reservation-cover {
   grid-column: 1 / span 3;
   grid-row: 3;
   display: grid;
@@ -139,6 +139,16 @@ a {
   justify-items: center;
   align-content: center;
 
+  @keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+  animation-name: slide-in;
+  animation-duration: 3s;
 }
 
 .restaurant-image {
@@ -160,6 +170,43 @@ a {
   font-family: 'BabelStoneHan';
   font-weight: bolder;
 
+}
+
+#menu {
+  justify-self: center;
+  align-self: center;
+  width: 45vw;
+  height: 80%;
+  background-color: white;
+ margin-right: 24rem;
+}
+
+#menu-image {
+  width: 45vw;
+  grid-column: 1;
+  justify-self: center;
+  align-self: center;
+  margin-left: 24rem;
+}
+
+#about-story {
+  z-index: 10;
+  justify-self: center;
+  align-self: center;
+  width: 50vw;
+  margin-left: 24rem;
+  background-color: white;
+  height: 40vh;
+}
+
+#about-image {
+margin-right: 24rem;
+  width: 25vw;
+}
+
+
+#contact-image {
+  width: 25vw;
 }
 
 

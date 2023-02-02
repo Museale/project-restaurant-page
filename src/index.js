@@ -1,95 +1,118 @@
 import "./style.scss";
 import { CreateMenu } from "./menu";
 import { CreateAbout } from "./about";
-import FirstImg from './pexels-cottonbro-studio-3297362.jpg';
-import SecImg from './pexels-cottonbro-studio-3297366.jpg';
-import ThirdImg from './pexels-cottonbro-studio-3297361.jpg';
+import { CreateContact } from "./contact";
+import { createReservation } from "./reservation";
+import FirstImg from './images/pexels-cottonbro-studio-3297362.jpg';
+import SecImg from './images/pexels-cottonbro-studio-3297366.jpg';
+import ThirdImg from './images/pexels-cottonbro-studio-3297361.jpg';
+
 
 const render = () => {
-const content = document.createElement('div');
-content.id = 'content';
-document.body.appendChild(content);
-console.log(content)
 
-const cover = document.createElement('div');
-cover.id = 'cover';
+    document.documentElement.lang = 'ja-jp';
+        
+    const content = document.createElement('div');
+    content.id = 'content';
+    document.body.appendChild(content);
+    console.log(content)
 
-const restaurantName = document.createElement('div');
-restaurantName.id = 'restaurant-name';
-restaurantName.textContent = 'The Bear';
 
-const restaurantImageOne = new Image();
-restaurantImageOne.classList.add('restaurant-image');
-restaurantImageOne.src = FirstImg;
+    const createFrontPageCover = () => {
+            
+    const cover = document.createElement('div');
+    cover.id = 'cover';
+    cover.classList.add('cover');
 
-const restaurantImageTwo = new Image();
-restaurantImageTwo.classList.add('restaurant-image');
-restaurantImageTwo.src = SecImg;
+        const restaurantImageOne = new Image();
+        restaurantImageOne.classList.add('restaurant-image');
+        restaurantImageOne.src = FirstImg;
 
-const restaurantImageThree = new Image();
-restaurantImageThree.classList.add('restaurant-image');
-restaurantImageThree.src = ThirdImg;
+        const restaurantImageTwo = new Image();
+        restaurantImageTwo.classList.add('restaurant-image');
+        restaurantImageTwo.src = SecImg;
 
-const restaurantInfo = document.createElement('div');
-restaurantInfo.id = 'restaurant-info';
-restaurantInfo.textContent = '居 酒 屋'
+        const restaurantImageThree = new Image();
+        restaurantImageThree.classList.add('restaurant-image');
+        restaurantImageThree.src = ThirdImg;
 
-const restaurantNav = document.createElement('nav');
-restaurantNav.id = 'restaurant-nav';
+        const restaurantInfo = document.createElement('div');
+        restaurantInfo.id = 'restaurant-info';
+        restaurantInfo.textContent = '居 酒 屋'
+        content.appendChild(cover);
+        cover.appendChild(restaurantImageOne);
+        cover.appendChild(restaurantImageTwo);
+        cover.appendChild(restaurantImageThree);
+        cover.appendChild(restaurantInfo);
 
-const restaurantFooter = document.createElement('footer');
-restaurantFooter.id = 'restaurant-footer';
+    };
 
-const menu = document.createElement('a');
-menu.textContent = 'メニュー';
-menu.href = '#';
+    const restaurantName = document.createElement('a');
+    restaurantName.id = 'restaurant-name';
+    restaurantName.textContent = 'KUMACHAN';
+    restaurantName.href = '#';
+    restaurantName.addEventListener('click', () => {
+        deleteCovers();
+        createFrontPageCover();
+    })
 
-menu.addEventListener('click', () =>  {
-    if (content.hasChildNodes()) {
-        content.removeChild;
+    const restaurantNav = document.createElement('nav');
+    restaurantNav.id = 'restaurant-nav';
+
+    const restaurantFooter = document.createElement('footer');
+    restaurantFooter.id = 'restaurant-footer';
+
+    const menu = document.createElement('a');
+    menu.textContent = 'メニュー';
+    menu.href = '#';
+    menu.addEventListener('click', () =>  {
+        deleteCovers();
+        CreateMenu();
+    })
+
+    const ourStory = document.createElement('a');
+    ourStory.textContent = '物語';
+    ourStory.href = '#';
+    ourStory.addEventListener('click', () => {
+        deleteCovers();
+        CreateAbout();
+    });
+
+    const contact = document.createElement('a');
+    contact.textContent = 'お問い合わせ';
+    contact.href = '#';
+    contact.addEventListener('click', () => {
+        deleteCovers();
+        CreateContact();
+    });
+
+    const reservation = document.createElement('a');
+    reservation.textContent = '予約';
+    reservation.href = '#';
+    reservation.addEventListener('click', () => {
+        deleteCovers();
+        createReservation();
+    }
+    )
+
+    const deleteCovers = () => {
+        if (content.hasChildNodes()) {
+            content.childNodes.forEach(element => {
+                element.classList.add('active');
+                element.classList.contains('cover') ?  content.removeChild(element): false;})
+        }
     }
 
-    CreateMenu();
-})
-
-const ourStory = document.createElement('a');
-ourStory.textContent = '物語';
-ourStory.href = '#';
-
-ourStory.addEventListener('click', () => {
-    if (content.hasChildNodes()) {
-        content.removeChild;
-    }
+    content.appendChild(restaurantNav);
+        restaurantNav.appendChild(menu);
+        restaurantNav.appendChild(ourStory);
+        restaurantNav.appendChild(restaurantName);
+        restaurantNav.appendChild(reservation)
+        restaurantNav.appendChild(contact);
     
-    CreateAbout();
-});
 
-const contact = document.createElement('a');
-contact.textContent = 'お問い合わせ';
-contact.href = '#';
-
-
-
-
-//Photo by Alex Knight: https://www.pexels.com/photo/restaurants-on-an-alleyway-5589595/
-//Photo by Satoshi Hirayama: https://www.pexels.com/photo/red-paper-lanterns-hanging-on-the-ceiling-7508610/
-//Photo by Satoshi Hirayama: https://www.pexels.com/photo/light-city-sunset-street-4456243/
-//Video by The Instagrapher: https://www.pexels.com/video/close-up-shot-of-a-chef-making-a-sushi-5845753/
-content.appendChild(restaurantNav);
-    restaurantNav.appendChild(menu);
-    restaurantNav.appendChild(ourStory);
-    restaurantNav.appendChild(contact);
-
-content.appendChild(restaurantName);
-
-content.appendChild(cover);
-    cover.appendChild(restaurantImageOne);
-    cover.appendChild(restaurantImageTwo);
-    cover.appendChild(restaurantImageThree);
-    cover.appendChild(restaurantInfo);
-
-content.appendChild(restaurantFooter);
-
+    content.appendChild(restaurantFooter);
+        createFrontPageCover();
 };
 
 render();
