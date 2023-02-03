@@ -17,6 +17,9 @@ const render = () => {
     document.body.appendChild(content);
     console.log(content)
 
+    const coverBackground = document.createElement('div');
+    coverBackground.id = 'cover-background';
+    content.appendChild(coverBackground);
 
     const createFrontPageCover = () => {
             
@@ -26,19 +29,23 @@ const render = () => {
 
         const restaurantImageOne = new Image();
         restaurantImageOne.classList.add('restaurant-image');
+        restaurantImageOne.alt = "ricebowl with assorted greens and fungi, tattooed hand eating with chopsticks, soy sauce"
         restaurantImageOne.src = FirstImg;
 
         const restaurantImageTwo = new Image();
         restaurantImageTwo.classList.add('restaurant-image');
+        restaurantImageTwo.alt = "ricebowl with assorted greens and fungi, tattooed hand pushing ricebowl, soy sauce"
         restaurantImageTwo.src = SecImg;
 
         const restaurantImageThree = new Image();
         restaurantImageThree.classList.add('restaurant-image');
+        restaurantImageThree.alt = "ricebowl with assorted greens and fungi, tattooed hand reaching for soy sauce"
         restaurantImageThree.src = ThirdImg;
 
         const restaurantInfo = document.createElement('div');
         restaurantInfo.id = 'restaurant-info';
-        restaurantInfo.textContent = '居 酒 屋'
+        restaurantInfo.textContent = '居酒屋'
+
         content.appendChild(cover);
         cover.appendChild(restaurantImageOne);
         cover.appendChild(restaurantImageTwo);
@@ -113,6 +120,7 @@ const render = () => {
 
     content.appendChild(restaurantFooter);
         createFrontPageCover();
+
 };
 
 render();

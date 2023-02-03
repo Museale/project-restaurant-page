@@ -1,4 +1,4 @@
-import contactImg from './images/pexels-satoshi-hirayama-7526794.jpg';
+import contactImg from './images/pexels-cottonbro-studio-3297882.jpg';
 
 export const CreateContact = () => {
     const contactCover = document.createElement('div');
@@ -8,12 +8,14 @@ export const CreateContact = () => {
 
     const contactInfo = document.createElement('div');
     contactInfo.id = 'contact-info';
+    contactInfo.textContent = '住所'
 
     const contactImage = new Image();
     contactImage.id = 'contact-image';
     contactImage.src = contactImg;
-
     contactCover.appendChild(contactImage);
     contactCover.appendChild(contactInfo);
+   
+
 console.log('And here!')
 };

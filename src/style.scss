@@ -126,49 +126,68 @@ a {
 
 }
 
-#cover, #menu-cover, #about-cover, #contact-cover, #reservation-cover {
+#cover, 
+#cover-background, 
+#menu-cover, 
+#about-cover, 
+#contact-cover, 
+#reservation-cover {
   grid-column: 1 / span 3;
   grid-row: 3;
   display: grid;
   width: 100%;
   height: 100%;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  justify-content: center;
   background-color: rgb(0, 0, 0);
   gap: 10px;
+  justify-content: center;
   justify-items: center;
   align-content: center;
+  align-items: center;
 
-  @keyframes slide-in {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0%);
-    }
-  }
-  animation-name: slide-in;
-  animation-duration: 3s;
+  // @keyframes slide-in {
+  //   from {
+  //     transform: translateX(-100%);
+  //   }
+  //   to {
+  //     transform: translateX(0%);
+  //   }
+  // }
+
+  // @keyframes fadeIn {
+  //   0% { opacity: 0; }
+  //   100% { opacity: 1; }
+  // }
+
+  // animation-name: slide-in, fadeIn;
+  // animation-duration: 2s;
 }
 
 .restaurant-image {
   width: 25vw;
   max-width: fit-content;
+  
+  
+}
+.restaurant-image:nth-child(3) {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 #restaurant-info {
-  display: flex;
-  align-items: center;
+  -webkit-writing-mode: vertical-rl;
+  -moz-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  align-self: center;
   justify-self: left;
   width: 10vw;
   margin-left: 50px;
   color: white;
-  height: 100%;
-  aspect-ratio: 2;
-  border-radius: 5px;
-  font-size: 10rem;
+  font-size: 15rem;
   font-family: 'BabelStoneHan';
   font-weight: bolder;
+  
 
 }
 
@@ -178,6 +197,7 @@ a {
   width: 45vw;
   height: 80%;
   background-color: white;
+  border-radius: 5px;
  margin-right: 24rem;
 }
 
@@ -187,38 +207,108 @@ a {
   justify-self: center;
   align-self: center;
   margin-left: 24rem;
+  border-radius: 5px;
 }
 
 #about-story {
-  z-index: 10;
-  justify-self: center;
-  align-self: center;
-  width: 50vw;
-  margin-left: 24rem;
-  background-color: white;
-  height: 40vh;
+  width: 15vw;
+  background-color: rgb(255, 255, 255);
+
+  height: 45vh;
+  font-size: large;
+  border-radius: 5px;
+  padding: 1rem;
+  line-height: 25px;
+  font-family: 'BabelStoneHan';
+  font-weight: bold;
+
+  -webkit-writing-mode: vertical-rl;
+  -moz-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+#about-story::after {
+  content: "クマちゃん居酒屋の話は昔話しです。東京で始まりました。初めにクマちゃんは居酒屋じゃなかったです。タバコのお店でした。外国人がよく来ましたので、お爺さんはあの外国人とタバコをいっしょにすわったんでした。ある日高い人が来ました。あの人はアミルです。アミルは料理人です。アミルは日本食を学ぶために日本に来ました。お爺さんはびっくりしました。アミルはお爺さんを感動しました。アミルとお爺さんさんはタバコのお店を居酒屋にしました。";
+
+}
+
+#about-image, #about-image-two, #about-image-three {
+
+  width: 25vw;
 }
 
 #about-image {
-margin-right: 24rem;
-  width: 25vw;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
+#contact-info {
+  color: white;
+    -webkit-writing-mode: vertical-rl;
+    -moz-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    border-radius: 5px;
+  }
 
 #contact-image {
   width: 25vw;
+  border-radius: 5px;
 }
+
+#reservation-info {
+  justify-self: center;
+  align-self: center;
+  margin-right: 25rem;
+  background-color: white;
+  width: 60vw;
+  height: 40vh;
+  border-radius: 5px;
+}
+#reservation-image {
+  width: 25vw;
+  border-radius: 5px;
+}
+
+
 
 
 @media  screen and (max-width: 1400px) {
-  .restaurant-image {
-    grid-row: 1;
-    grid-column: 1;
-    width: 50vw;
-  }
-}
+//   .restaurant-image {
+//     grid-row: 1;
+//     grid-column: 1;
+//     width: 100vw;
+//   }
+// }
 
-@media screen and (max-width: 705px) {
+// @media screen and (max-width: 705px) {
+  #about-story {
+    display: flex;
+    padding: 10rem;
+    grid-row: 1;
+    grid-column: 1/-1;
+    position: absolute;
+    z-index:-10;
+    color:white;
+    gap: 0px;
+    width: 100vw;
+    background-image: url('./images/pexels-cottonbro-studio-3298638.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    height: 100vh;
+    font-size: 28px;
+    line-height: 30px;
+    align-items: center;
+  }
+
+  .about-img {
+  visibility: hidden;
+ 
+  }
+  
   .restaurant-image {
     grid-row: 1;
     grid-column: 1;
@@ -226,15 +316,21 @@ margin-right: 24rem;
     border:rgb(0, 0, 0) solid 15px;
 
   }
-  #cover {
+
+  #cover, #cover-background, 
+  #menu-cover, 
+  #about-cover, 
+  #contact-cover, 
+  #reservation-cover {
     background-color: transparent;
   }
   #restaurant-info {
     font-weight: bolder;
-    width: 100vw;
-    font-size: 8rem;
-    color: black;
-    text-shadow: 2px 5px 5px white;
+    position: absolute;
+    margin-left: 15rem;
+    font-size: 18rem;
+  
+    text-shadow: 2px 5px 5px rgb(3, 3, 3);
   }
   
 }
