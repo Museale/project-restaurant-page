@@ -1,0 +1,32 @@
+@import './mixAndVar';
+
+#contact-cover {
+    @include covers;
+}
+
+#contact-info {
+    margin-right: 25rem;
+    background-color: white;
+    width: 60vw;
+    height: 40vh;
+    border-radius: 5px;
+    }
+
+#contact-info::after {
+
+content:  '〒329-1292 東京都千代田区大手町9番地';
+top: 0;
+left: 50%;
+transform: translate(-50%, -25px);
+}
+// #contact-info::after {
+//     content: '+81-29-282-8241';
+//     top: 0;
+//     left: 50%;
+//     transform: translate(-50%, -45px);
+// }
+  #contact-image {
+    width: 25vw;
+    border-radius: 5px;
+  }
+  

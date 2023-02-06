@@ -1,4 +1,10 @@
-$body-color: red;
+@import '_about.scss';
+@import '_contact.scss';
+@import '_menu.scss';
+@import '_reservation.scss';
+@import '_mixAndVar.scss';
+
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -82,14 +88,12 @@ body {
   align-items: center;
   align-content: center;
   justify-items: center;
-
-
 }
-
 
 #restaurant-nav {
   display: flex;
   grid-row: 1;
+  grid-column: 1 / span -1;
   justify-content: center;
   gap: 50px;
   background-color:rgb(2, 2, 2);
@@ -106,7 +110,6 @@ a {
   text-decoration: none;
   color: white;
 }
-
 
 #restaurant-footer {
   display: inline-grid;
@@ -126,49 +129,18 @@ a {
 
 }
 
-#cover, 
-#cover-background, 
-#menu-cover, 
-#about-cover, 
-#contact-cover, 
-#reservation-cover {
-  grid-column: 1 / span 3;
-  grid-row: 3;
-  display: grid;
-  width: 100%;
-  height: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  background-color: rgb(0, 0, 0);
-  gap: 10px;
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
-  align-items: center;
-
-  // @keyframes slide-in {
-  //   from {
-  //     transform: translateX(-100%);
-  //   }
-  //   to {
-  //     transform: translateX(0%);
-  //   }
-  // }
-
-  // @keyframes fadeIn {
-  //   0% { opacity: 0; }
-  //   100% { opacity: 1; }
-  // }
-
-  // animation-name: slide-in, fadeIn;
-  // animation-duration: 2s;
+#cover, #cover-background {
+  @include covers;
 }
 
+#cover-background {
+  z-index: -10;
+}
 .restaurant-image {
   width: 25vw;
   max-width: fit-content;
-  
-  
 }
+
 .restaurant-image:nth-child(3) {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -179,110 +151,69 @@ a {
   -moz-writing-mode: vertical-rl;
   -ms-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
-  align-self: center;
-  justify-self: left;
-  width: 10vw;
-  margin-left: 50px;
   color: white;
-  font-size: 15rem;
+  font-size: 10rem;
   font-family: 'BabelStoneHan';
   font-weight: bolder;
-  
-
 }
 
-#menu {
-  justify-self: center;
-  align-self: center;
-  width: 45vw;
-  height: 80%;
-  background-color: white;
-  border-radius: 5px;
- margin-right: 24rem;
-}
+@media screen and (max-width: 1500px) {
+ #restaurant-nav {
+gap: 10px;
+  font-size: 0.8rem;
+ }
+ #contact-cover {
+  @include mediaCovers;
+  background-image: url(./images/pexels-cottonbro-studio-3298053.jpg);
+ }
 
-#menu-image {
-  width: 45vw;
+ #contact-info {
+  color: black;
+  font-size: 28px;
+  width: 80vw;
+ }
+
+ #contact-image {
+  visibility: hidden;
+  position: absolute;
+ }
+
+ #menu-image {
+  visibility: hidden;
+ }
+
+ #menu-cover {
+  @include mediaCovers;
+  background-image: url(./images/sushi-296739.svg);
+ }
+
+ #reservation-cover {
+  @include mediaCovers;
+  background-image: url(./images/pexels-satoshi-hirayama-7526794.jpg);
+  background-position: center;
+ }
+ #reservation-image {
+  visibility: hidden;
+  position: absolute;
+ }
+ #reservation-info {
+  grid-row: 1;
   grid-column: 1;
-  justify-self: center;
-  align-self: center;
-  margin-left: 24rem;
-  border-radius: 5px;
-}
-
-#about-story {
-  width: 15vw;
-  background-color: rgb(255, 255, 255);
-
-  height: 45vh;
-  font-size: large;
-  border-radius: 5px;
-  padding: 1rem;
-  line-height: 25px;
-  font-family: 'BabelStoneHan';
-  font-weight: bold;
-
-  -webkit-writing-mode: vertical-rl;
-  -moz-writing-mode: vertical-rl;
-  -ms-writing-mode: vertical-rl;
-  writing-mode: vertical-rl;
-}
-
-#about-story::after {
-  content: "クマちゃん居酒屋の話は昔話しです。東京で始まりました。初めにクマちゃんは居酒屋じゃなかったです。タバコのお店でした。外国人がよく来ましたので、お爺さんはあの外国人とタバコをいっしょにすわったんでした。ある日高い人が来ました。あの人はアミルです。アミルは料理人です。アミルは日本食を学ぶために日本に来ました。お爺さんはびっくりしました。アミルはお爺さんを感動しました。アミルとお爺さんさんはタバコのお店を居酒屋にしました。";
-
-}
-
-#about-image, #about-image-two, #about-image-three {
-
-  width: 25vw;
-}
-
-#about-image {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-#contact-info {
-  color: white;
-    -webkit-writing-mode: vertical-rl;
-    -moz-writing-mode: vertical-rl;
-    -ms-writing-mode: vertical-rl;
-    writing-mode: vertical-rl;
-    border-radius: 5px;
-  }
-
-#contact-image {
-  width: 25vw;
-  border-radius: 5px;
-}
-
-#reservation-info {
-  justify-self: center;
-  align-self: center;
-  margin-right: 25rem;
+  width: 80vw;
+  height: 60vh;
   background-color: white;
-  width: 60vw;
-  height: 40vh;
-  border-radius: 5px;
-}
-#reservation-image {
-  width: 25vw;
-  border-radius: 5px;
-}
+  margin: 0;
 
-
-
-
-@media  screen and (max-width: 1400px) {
-//   .restaurant-image {
-//     grid-row: 1;
-//     grid-column: 1;
-//     width: 100vw;
-//   }
-// }
-
-// @media screen and (max-width: 705px) {
+ }
+ #menu {
+  grid-row: 1;
+  grid-column: 1;
+  width: 80vw;
+  height: 80vh;
+  background-color: white;
+  margin: 0;
+  margin-top: 20%;
+ }
   #about-story {
     display: flex;
     padding: 10rem;
@@ -306,31 +237,51 @@ a {
 
   .about-img {
   visibility: hidden;
- 
   }
   
-  .restaurant-image {
+  .restaurant-image{
     grid-row: 1;
     grid-column: 1;
     width: 100vw;
     border:rgb(0, 0, 0) solid 15px;
-
   }
 
-  #cover, #cover-background, 
+  #cover {
+    background-image: url(./images/pexels-cottonbro-studio-3297361.jpg);
+    background-position: left;
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+  } 
+  .restaurant-image {
+    visibility: collapse;
+    position: absolute;
+  }
+
+  #cover,
   #menu-cover, 
   #about-cover, 
   #contact-cover, 
   #reservation-cover {
     background-color: transparent;
   }
+  #menu-cover{
+    width: 100vw;
+  }
   #restaurant-info {
     font-weight: bolder;
-    position: absolute;
-    margin-left: 15rem;
-    font-size: 18rem;
-  
-    text-shadow: 2px 5px 5px rgb(3, 3, 3);
-  }
-  
+    font-size: 8rem;
+    color: black;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    grid-column: 1;
+    grid-row: 1;
+    height: 160vh;
+    margin-right: auto;
+    text-align: center;
+  }  
 }

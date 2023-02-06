@@ -8,7 +8,7 @@ export const CreateContact = () => {
 
     const contactInfo = document.createElement('div');
     contactInfo.id = 'contact-info';
-    contactInfo.textContent = '住所'
+   
 
     const contactImage = new Image();
     contactImage.id = 'contact-image';

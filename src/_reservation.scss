@@ -1,0 +1,20 @@
+@import './mixAndVar';
+
+#reservation-cover {
+    @include covers;
+}
+
+#reservation-info {
+    margin-right: 25rem;
+    background-color: white;
+    width: 60vw;
+    height: 40vh;
+    border-radius: 5px;
+  }
+  #reservation-image {
+    width: 25vw;
+    border-radius: 5px;
+  }
+#calendar::before {
+    content: 'テーブルを予約:';
+}

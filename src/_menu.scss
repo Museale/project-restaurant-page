@@ -1,0 +1,25 @@
+@import './mixAndVar';
+
+#menu-cover {
+    @include covers;
+}
+
+#menu {
+    justify-self: center;
+    align-self: center;
+    width: 45vw;
+    height: 80%;
+    background-color: white;
+    border-radius: 5px;
+   margin-right: 24rem;
+  }
+  
+  #menu-image {
+    width: 45vw;
+    grid-column: 1;
+    justify-self: center;
+    align-self: center;
+    margin-left: 24rem;
+    border-radius: 5px;
+  }
+  

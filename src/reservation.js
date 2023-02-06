@@ -8,6 +8,7 @@ export const createReservation = () => {
 
     const reservationInfo = document.createElement('div');
         reservationInfo.id = 'reservation-info';
+        reservationInfo.textContent = '';
 
     const reservationImage = new Image();
         reservationImage.id = 'reservation-image';
