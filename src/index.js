@@ -120,7 +120,8 @@ const render = () => {
 
     content.appendChild(restaurantFooter);
         createFrontPageCover();
-
+    deleteCovers()
+    CreateMenu();
 };
 
 render();

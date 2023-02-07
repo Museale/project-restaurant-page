@@ -16,7 +16,5 @@ export const createReservation = () => {
 
         reservationCover.appendChild(reservationImage);
         reservationCover.appendChild(reservationInfo);
-console.log('And here!')
-
 };
 
