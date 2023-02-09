@@ -27,5 +27,4 @@ export const CreateContact = () => {
         contactInfo.appendChild(address);
         contactInfo.appendChild(phoneNumber);
         contactInfo.appendChild(email);
-   
 };

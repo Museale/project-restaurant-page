@@ -1,4 +1,4 @@
-import reservationImg from './images/pexels-rachel-claire-4577410.jpg';
+import reservationImg from './images/pexels-alex-knight-5589595.jpg';
 
 export const createReservation = () => {
     const reservationCover = document.createElement('div');

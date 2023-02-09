@@ -15,7 +15,6 @@ const render = () => {
     const content = document.createElement('div');
     content.id = 'content';
     document.body.appendChild(content);
-    console.log(content)
 
     const coverBackground = document.createElement('div');
     coverBackground.id = 'cover-background';
