@@ -1,9 +1,9 @@
-@import '_about.scss';
-@import '_contact.scss';
-@import '_menu.scss';
-@import '_reservation.scss';
-@import '_mixAndVar.scss';
-
+@import '_about';
+@import '_contact';
+@import '_menu';
+@import '_reservation';
+@import '_mixAndVar';
+@import '_mediaQuery';
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -69,7 +69,6 @@ body {
   
 }
 
-
 @font-face {
   font-family: 'BabelStoneHan';
   src: url(./BabelStoneHan.ttf);
@@ -84,36 +83,33 @@ body {
   grid-template-rows: 60px 80px 4fr 1fr;
   grid-template-columns: minmax(350px, 1fr);
   gap: 10px;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  justify-items: center;
+  @include centeringAll;
 }
 
 #restaurant-nav {
   display: flex;
   grid-row: 1;
   grid-column: 1 / span -1;
-  justify-content: center;
   gap: 50px;
-  background-color:rgb(2, 2, 2);
+  background-color:$primary-color;
   width: 100vw;
   height: 80px;
   position: fixed;
   top: 0;
-  color: white;
+  color: $secondary-color;
   font-size: larger;
+  justify-content: center;
   align-items: center;
 }
 
 a {
   text-decoration: none;
-  color: white;
+  color: $secondary-color;
 }
 
 #restaurant-footer {
   display: inline-grid;
-  background-color:rgb(2, 2, 2);
+  background-color:$primary-color;
   width: 100vw;
   height: 60px;
   position: fixed;
@@ -125,7 +121,7 @@ a {
 
 #restaurant-footer::after {
   content: 'Created by github.com/Museale';
-  color: white;
+  color: $secondary-color;
 
 }
 
@@ -147,142 +143,9 @@ a {
 }
 
 #restaurant-info {
-  -webkit-writing-mode: vertical-rl;
-  -moz-writing-mode: vertical-rl;
-  -ms-writing-mode: vertical-rl;
-  writing-mode: vertical-rl;
-  color: white;
+  @include verticalText;
+  color: $secondary-color;
   font-size: 10rem;
   font-family: 'BabelStoneHan';
   font-weight: bolder;
-}
-
-@media screen and (max-width: 1500px) {
- #restaurant-nav {
-gap: 10px;
-  font-size: 0.8rem;
- }
- #contact-cover {
-  @include mediaCovers;
-  background-image: url(./images/pexels-cottonbro-studio-3298053.jpg);
- }
-
- #contact-info {
-  color: black;
-  font-size: 28px;
-  width: 80vw;
-  margin: 0;
- }
-
- #contact-image {
-  visibility: hidden;
-  position: absolute;
- }
-
- #menu-image {
-  visibility: hidden;
- }
-
- #menu-cover {
-  @include mediaCovers;
-  background-image: url(./images/sushi-296739.svg);
- }
-
- #reservation-cover {
-  @include mediaCovers;
-  background-image: url(./images/pexels-satoshi-hirayama-7526794.jpg);
-  background-position: center;
- }
- #reservation-image {
-  visibility: hidden;
-  position: absolute;
- }
- #reservation-info {
-  grid-row: 1;
-  grid-column: 1;
-  width: 80vw;
-  height: 60vh;
-  background-color: white;
-  margin: 0;
-
- }
- #menu {
-  grid-row: 1;
-  grid-column: 1;
-  width: 80vw;
-  height: 80vh;
-  background-color: white;
-  margin: 0;
-  margin-top: 20%;
- }
-  #about-story {
-    display: flex;
-    padding: 10rem;
-    grid-row: 1;
-    grid-column: 1/-1;
-    position: absolute;
-    z-index:-10;
-    color:white;
-    gap: 0px;
-    width: 100vw;
-    background-image: url('./images/pexels-cottonbro-studio-3298638.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
-    height: 100vh;
-    font-size: 28px;
-    line-height: 30px;
-    align-items: center;
-  }
-
-  .about-img {
-  visibility: hidden;
-  }
-  
-  .restaurant-image{
-    grid-row: 1;
-    grid-column: 1;
-    width: 100vw;
-    border:rgb(0, 0, 0) solid 15px;
-  }
-
-  #cover {
-    background-image: url(./images/pexels-cottonbro-studio-3297361.jpg);
-    background-position: left;
-    background-size: cover;
-    height: 100vh;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-
-  } 
-  .restaurant-image {
-    visibility: collapse;
-    position: absolute;
-  }
-
-  #cover,
-  #menu-cover, 
-  #about-cover, 
-  #contact-cover, 
-  #reservation-cover {
-    background-color: transparent;
-  }
-  #menu-cover{
-    width: 100vw;
-  }
-  #restaurant-info {
-    font-weight: bolder;
-    font-size: 8rem;
-    color: black;
-    background-color: white;
-    padding: 5px;
-    border-radius: 5px;
-    grid-column: 1;
-    grid-row: 1;
-    height: 160vh;
-    margin-right: auto;
-    text-align: center;
-  }  
 }

@@ -11,7 +11,10 @@ export const CreateAbout = () => {
     const aboutStory = document.createElement('div');
         aboutStory.id = 'about-story';
         aboutCover.appendChild(aboutStory);
-    
+
+    const aboutStoryText = document.createElement('p');
+        aboutStoryText.textContent = 'クマちゃん居酒屋の話は昔話しです。東京で始まりました。初めにクマちゃんは居酒屋じゃなかったです。タバコのお店でした。外国人がよく来ましたので、お爺さんはあの外国人とタバコをいっしょにすわったんでした。ある日高い人が来ました。あの人はアミルです。アミルは料理人です。アミルは日本食を学ぶために日本に来ました。お爺さんはびっくりしました。アミルはお爺さんを感動しました。アミルとお爺さんさんはタバコのお店を居酒屋にしました。';
+        aboutStory.appendChild(aboutStoryText);
     
     const aboutImage = new Image();
     aboutImage.id = 'about-image';
@@ -31,5 +34,4 @@ export const CreateAbout = () => {
     aboutImageThree.classList.add('about-img')
         aboutCover.appendChild(aboutImageThree);
 
-console.log('it works here too!')
 };

@@ -5,21 +5,20 @@
 }
 
 #menu {
-  display: grid;
-  
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(minmax, aufo-fill(100px, 1fr));
-  justify-self: center;
-  align-self: center;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  align-content: center;
-  width: 45vw;
-  height: 80%;
-  background-color: white;
-  border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    justify-self: center;
+    @include centeringAll;
+    width: 45vw;
+    height: 40vh;
+    background-color: $secondary-color;
+    border-radius: 5px;
     margin-right: 24rem;
+    font-family: 'BabelStoneHan';
+    font-weight: bolder;
+    font-size: 3.5rem;
+    line-height: 3rem;
   }
   
   #menu-image {
@@ -31,15 +30,12 @@
     border-radius: 5px;
   }
 
-  #menu-items, #drinks {
+  #menu-items {
+    border: 1px solid $primary-color;
+    padding: 2rem;
     display: grid;
-    -webkit-writing-mode: vertical-rl;
-    -moz-writing-mode: vertical-rl;
-    -ms-writing-mode: vertical-rl;
-    writing-mode: vertical-rl;
-    // grid-template-columns: repeat(1,1fr);
+    @include verticalText;
     width: 100%;
-    height: 150px;
-
+    
   }
 

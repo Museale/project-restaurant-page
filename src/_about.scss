@@ -5,9 +5,9 @@
 }
 
 #about-story {
+  display: grid;
     width: 15vw;
-    background-color: rgb(255, 255, 255);
-  
+    background-color: $secondary-color;
     height: 45vh;
     font-size: large;
     border-radius: 5px;
@@ -15,20 +15,12 @@
     line-height: 25px;
     font-family: 'BabelStoneHan';
     font-weight: bold;
-  
-    -webkit-writing-mode: vertical-rl;
-    -moz-writing-mode: vertical-rl;
-    -ms-writing-mode: vertical-rl;
-    writing-mode: vertical-rl;
-  }
-  
-  #about-story::after {
-    content: "クマちゃん居酒屋の話は昔話しです。東京で始まりました。初めにクマちゃんは居酒屋じゃなかったです。タバコのお店でした。外国人がよく来ましたので、お爺さんはあの外国人とタバコをいっしょにすわったんでした。ある日高い人が来ました。あの人はアミルです。アミルは料理人です。アミルは日本食を学ぶために日本に来ました。お爺さんはびっくりしました。アミルはお爺さんを感動しました。アミルとお爺さんさんはタバコのお店を居酒屋にしました。";
-  
+    @include verticalText;
+    @include centeringAll;
+
   }
   
   #about-image, #about-image-two, #about-image-three {
-  
     width: 25vw;
   }
   

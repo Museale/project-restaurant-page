@@ -116,12 +116,8 @@ const render = () => {
         restaurantNav.appendChild(restaurantName);
         restaurantNav.appendChild(reservation)
         restaurantNav.appendChild(contact);
-    
-
     content.appendChild(restaurantFooter);
         createFrontPageCover();
-    deleteCovers()
-    CreateMenu();
 };
 
 render();

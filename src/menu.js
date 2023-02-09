@@ -1,8 +1,4 @@
 import menuImg from './images/sushi-296739.svg';
-import sushiImg from './images/sushi-296521.svg';
-
-
-
 
 export const CreateMenu = () => {
     const menuCover = document.createElement('div');
@@ -15,25 +11,16 @@ export const CreateMenu = () => {
         menuImage.id = 'menu-image';
         menuCover.appendChild(menuImage)
 
-
     const menu = document.createElement('div');
         menu.id = 'menu';
         menuCover.appendChild(menu)
 
     const menuItems = document.createElement('div');
         menuItems.id = 'menu-items';
-        menuItems.textContent = '今日のメニュー';
         menu.appendChild(menuItems);
 
     const itemOne = document.createElement('p');
-        itemOne.textContent = '焼き鳥';
-      
-       
-    
-    // const sushiImage = new Image();
-    //     sushiImage.src = sushiImg;
-    //     sushiImage.class = 'menu-item-image';
-    //     itemOne.appendChild(sushiImage)
+        itemOne.textContent = '焼き鳥'; 
 
     const itemTwo = document.createElement('p');
         itemTwo.textContent = 'ラーメン';
@@ -52,8 +39,7 @@ export const CreateMenu = () => {
     const itemSix = document.createElement('p');
         itemSix.textContent = '定食';
 
-
-    const drinks = document.createElement('div');
+    const drinks = document.createElement('p');
         drinks.textContent = 'ビール';
         drinks.id = 'drinks';
 
@@ -65,7 +51,7 @@ export const CreateMenu = () => {
 
     const drinkThree = document.createElement('p');
         drinkThree.textContent = 'エール';
-        menuItems.appendChild(drinkTwo);
+        
         menuItems.appendChild(itemSix);
         menuItems.appendChild(itemFive);
         menuItems.appendChild(itemFour);
@@ -73,8 +59,7 @@ export const CreateMenu = () => {
         menuItems.appendChild(itemTwo);
         menuItems.appendChild(itemOne);
         menuItems.appendChild(drinkTwo);
-        menuItems.appendChild(drinks)
+        menuItems.appendChild(drinks);
         menuItems.appendChild(drinkOne);
-      
         menuItems.appendChild(drinkThree);
 };

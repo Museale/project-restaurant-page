@@ -5,16 +5,16 @@
 }
 
 #reservation-info {
+  display: grid;
+    @include centeringAll;
     margin-right: 25rem;
-    background-color: white;
-    width: 60vw;
+    background-color: $secondary-color;
+    width: 45vw;
     height: 40vh;
     border-radius: 5px;
+    gap: 40px;
   }
   #reservation-image {
     width: 25vw;
     border-radius: 5px;
   }
-#calendar::before {
-    content: 'テーブルを予約:';
-}
